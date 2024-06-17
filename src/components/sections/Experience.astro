@@ -1,0 +1,31 @@
+---
+import ExperienceItem from '../ExperienceItem.astro'
+
+const EXPERIENCE = [ 
+  {
+    date: 'Mayo 2024 - Actualidad',
+    title: 'Desarrollador React Jr',
+    company: 'Devdatep',
+    description:
+      'Desarrollo paginas web.',
+    link: '',
+  },
+  {
+    date: 'Febrero 2024 - Mayo 2024',
+    title: 'Practicante de TI',
+    company: 'Ksoft - Senati Huánuco',
+    description:
+      'Desarrollé aplicaciones web utilizando tecnologías modernas. Proporcioné soporte técnico a clientes, resolviendo problemas y asegurando un funcionamiento óptimo de sus sistemas.',
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map(experience => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    )) 
+  }
+</ol>

@@ -5,26 +5,31 @@ import WhatsAppIcon from '../icons/WhatsAppIcon.astro'
 import GmailIcon from '../icons/GmailIcon.astro'
 ---
 
-<header class="flex justify-between items-center py-5 w-[1120px] mx-auto">
-  
-
-  <nav class="flex flex-row gap-x-6 opacity-90 text-lg">
-    <a class="hover:text-yellow-500" href="/">Home</a>
-    <a class="hover:text-yellow-500" href="/about">About me</a>
-    <a class="hover:text-yellow-500" href="/skills">Skills</a>
-    <a class="hover:text-yellow-500" href="/projects">Project</a>
+<header
+  class="flex justify-between items-center px-4 py-5 w-full xl:w-[1120px] mx-auto"
+>
+  <nav class="flex flex-row gap-x-4 lg:gap-x-6 opacity-90 text-base lg:text-lg">
+    <a class="hover:text-yellow-500" href="#top">Inicio</a>
+    <a class="hover:text-yellow-500" href="#experience">Experiencia</a>
+    <a class="hover:text-yellow-500" href="#projects">Proyectos</a>
+    <!-- <a class="hover:text-yellow-500" href="#skills">Skills</a> -->
+    <!-- <a class="hover:text-yellow-500" href="#about-me">Sobre mí</a> -->
+    <a class="hover:text-yellow-500" href="#contact">Contacto</a>
   </nav>
   <div class="flex flex-row gap-x-4">
-    <a class="hover:text-yellow-500" href=""><GitHubIcon ></a>
-    <a href=""><LikedInIcon /></a>
-    <a href=""><WhatsAppIcon /></a>
-    <!-- <a href=""><GmailIcon /></a> QUEDA RARO -->
+    <a class="hover:text-yellow-500" href=""
+      ><GitHubIcon class="size-6 lg:size-[30px]" />
+      <a href=""><LikedInIcon class="size-6 lg:size-[30px]" /></a>
+      <a href=""><WhatsAppIcon class="size-6 lg:size-[30px]" /></a>
+      <!-- <a href=""><GmailIcon /></a> QUEDA RARO -->
+    </a>
   </div>
-</header>
 
-<!-- 
+  <!-- 
     TODO: 
         - Hover a icons 
         - Find color for secondary color
+        - Add mobile view with 3 rayas
 
 -->
+</header>

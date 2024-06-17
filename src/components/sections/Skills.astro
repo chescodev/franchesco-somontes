@@ -1,0 +1,66 @@
+---
+import AstroIcon from '@/components/icons/AstroIcon.astro'
+import CssIcon from '@/components/icons/CssIcon.astro'
+import HtmlIcon from '@/components/icons/HtmlIcon.astro'
+import JavaIcon from '@/components/icons/JavaIcon.astro'
+import JavaScriptIcon from '@/components/icons/JavaScriptIcon.astro'
+import ReactIcon from '@/components/icons/ReactIcon.astro'
+import SpringIcon from '@/components/icons/SpringIcon.astro'
+import TailwindIcon from '@/components/icons/TailwindIcon.astro'
+---
+
+<div class="flex flex-wrap gap-x-2">
+  {
+    [
+      HtmlIcon,
+      CssIcon,
+      JavaScriptIcon,
+      ReactIcon,
+      AstroIcon,
+      TailwindIcon,
+      JavaIcon,
+      SpringIcon,
+    ].map(Icon => (
+      <div class="icon-box my-2 py-4">
+        <Icon class="size-12" />
+      </div>
+    ))
+  }
+  <!-- PROBAR OTRAS OPCIONES PARA LAS SKILLS, SIENTO QUE NO VA CON EL FONDO 
+    QUIZÁS PROBAR ALGO COMO ESTO https://hlinarez.netlify.app/ 
+    TODO: 
+    - DESCARGAR MÀS ICONOS
+    - VER SI SE PUEDE PONER ALT
+
+  -->
+</div>
+
+<style>
+  .icon-box {
+    position: relative;
+    background: linear-gradient(
+      to bottom right,
+      hsl(0, 0%, 25%) 0%,
+      hsla(0, 0%, 25%, 0) 50%
+    );
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: hsl(45, 100%, 72%);
+    box-shadow: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
+    z-index: 1;
+  }
+
+  .icon-box::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: hsl(240, 2%, 13%);
+    border-radius: inherit;
+    z-index: -1;
+  }
+</style>
