@@ -9,6 +9,7 @@ import StarIcon from '../components/icons/StarIcon.astro'
 import Skills from '../components/sections/Skills.astro'
 import Projects from '../components/sections/Projects.astro'
 import CodeIcon from '@/components/icons/CodeIcon.astro'
+import NavLink from '@/components/NavLink.astro'
 ---
 
 <Layout
@@ -27,19 +28,23 @@ import CodeIcon from '@/components/icons/CodeIcon.astro'
       <Experience />
     </SectionContainer>
     <SectionContainer class="mt-16">
+      <NavLink />
+    </SectionContainer>
+    <SectionContainer id="projects" class="mt-16">
       <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
         <CodeIcon class="size-7" />
-        Proyectos</h2>
+        Proyectos
+      </h2>
       <Projects />
     </SectionContainer>
     <SectionContainer class="mt-16">
       <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
         <StarIcon class="size-7" />
-        Skills</h2>
+        Skills
+      </h2>
       <Skills />
     </SectionContainer>
 
-    
     <!-- Exp. Laboral  -->
     <!-- Projects / Certificate -->
     <!-- Skills  -->
