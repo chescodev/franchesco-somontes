@@ -6,6 +6,8 @@ import React from '@/components/icons/ReactIcon.astro'
 import LinkButton from '@/components/LinkButton.astro'
 import GitHub from '@/components/icons/GitHubIcon.astro'
 import Link from '@/components/icons/LinkIcon.astro'
+import Tailwind from '@/components/icons/TailwindIcon.astro'
+import TypeScript from '@/components/icons/TypeScriptIcon.astro'
 
 const TAGS = {
   HTML: {
@@ -16,7 +18,7 @@ const TAGS = {
   CSS: {
     name: 'CSS3',
     class: 'bg-blue-100 text-blue-800',
-    icon: Css,  
+    icon: Css,
   },
   JAVASCRIPT: {
     name: 'JavaScript',
@@ -25,26 +27,36 @@ const TAGS = {
   },
   REACT: {
     name: 'React',
-    class: 'bg-blue-100 text-blue-800',
+    class: 'bg-blue-200 text-blue-900',
     icon: React,
+  },
+  TAILWIND: {
+    name: 'Tailwind',
+    class: 'bg-[#003159] text-white',
+    icon: Tailwind,
+  },
+  TYPESCRIPT: {
+    name: 'TypeScript',
+    class: 'bg-black text-white',
+    icon: TypeScript,
   },
 }
 
 const PROJECTS = [
   {
-    title: 'Project 1',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    link: 'asdasd',
-    github: '#',
-    image: 'https://arrobasystem.com/cdn/shop/articles/e-commerce-el-presente-y-el-futuro-de-las-ventas-en-linea_1200x1200.png?v=1597172403',
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.REACT],
+    title: 'Simulador de Pensiones PUCP',
+    description:
+      'Una herramienta intuitiva para calcular las pensiones universitarias en la PUCP, facilitando a los estudiantes y padres la planificación financiera con cálculos detallados',
+    link: 'https://simuladorpensionespucp.vercel.app/',
+    image: '/project5.jpg',
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
   },
   {
     title: 'Project 2',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     link: 'asdasd',
     github: '#',
-    image: 'https://arrobasystem.com/cdn/shop/articles/e-commerce-el-presente-y-el-futuro-de-las-ventas-en-linea_1200x1200.png?v=1597172403',
+    image: '/project4.png',
     tags: [TAGS.HTML],
   },
   {
@@ -53,7 +65,7 @@ const PROJECTS = [
       'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     link: 'asdasd',
     github: '#',
-    image: 'https://arrobasystem.com/cdn/shop/articles/e-commerce-el-presente-y-el-futuro-de-las-ventas-en-linea_1200x1200.png?v=1597172403',
+    image: '/project3.png',
     tags: [TAGS.HTML],
   },
 ]

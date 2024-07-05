@@ -3,6 +3,11 @@ import GitHubIcon from '../icons/GitHubIcon.astro'
 import LikedInIcon from '../icons/LikedInIcon.astro'
 import WhatsAppIcon from '../icons/WhatsAppIcon.astro'
 import GmailIcon from '../icons/GmailIcon.astro'
+
+const WhatsAppMessage =
+  'https://api.whatsapp.com/send?phone=+51936899419&text=Hola,%20quisera%20saber%20si....'
+const LinkLinkedin = 'https://www.linkedin.com/in/franchescosomontes/'
+const LinkGitHub = 'https://github.com/chescodev'
 ---
 
 <header
@@ -17,11 +22,14 @@ import GmailIcon from '../icons/GmailIcon.astro'
     <a class="hover:text-yellow-500" href="#contact">Contacto</a>
   </nav>
   <div class="flex flex-row gap-x-4">
-    <a class="hover:text-yellow-500" href=""
+    <a class="hover:text-yellow-400" href={LinkGitHub}
       ><GitHubIcon class="size-6 lg:size-[30px]" />
-      <a href=""><LikedInIcon class="size-6 lg:size-[30px]" /></a>
-      <a href=""><WhatsAppIcon class="size-6 lg:size-[30px]" /></a>
-      <!-- <a href=""><GmailIcon /></a> QUEDA RARO -->
+      <a class="hover:text-yellow-400" href={LinkLinkedin}
+        ><LikedInIcon class="size-6 lg:size-[30px]" /></a
+      >
+      <a class="hover:text-yellow-400" href={WhatsAppMessage}
+        ><WhatsAppIcon class="size-6 lg:size-[30px]" /></a
+      >
     </a>
   </div>
 
