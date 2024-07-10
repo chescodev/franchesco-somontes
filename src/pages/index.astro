@@ -9,10 +9,7 @@ import StarIcon from '../components/icons/StarIcon.astro'
 import Skills from '../components/sections/Skills.astro'
 import Projects from '../components/sections/Projects.astro'
 import CodeIcon from '@/components/icons/CodeIcon.astro'
-import NavLink from '@/components/NavLink.astro'
-import Contact from '@/components/sections/Contact.astro'
 import ContactUs from '@/components/ContactUs.tsx'
-import Variables from '@/components/variables.astro'
 import MailIcon from '@/components/icons/MailIcon.astro'
 ---
 
@@ -31,9 +28,6 @@ import MailIcon from '@/components/icons/MailIcon.astro'
       </h2>
       <Experience />
     </SectionContainer>
-    <!-- <SectionContainer class="mt-16">
-      <NavLink />
-    </SectionContainer> -->
     <SectionContainer id="projects" class="mt-16">
       <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
         <CodeIcon class="size-7" />
@@ -55,14 +49,6 @@ import MailIcon from '@/components/icons/MailIcon.astro'
       </h2>
       <ContactUs client:load />
     </SectionContainer>
-    <!-- <Contact /> -->
-    <!-- Exp. Laboral  -->
-    <!-- Projects / Certificate -->
-    <!-- Skills  -->
-    <!-- About me **Optional** -->
-    <!-- Contáctame  -->
-
-    <!-- <button>Send Email</button> -->
   </main>
 </Layout>
 <style></style>
