@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import confetti from "canvas-confetti"
 
 interface Values {
   name: string
@@ -85,6 +86,7 @@ const ContactUs = () => {
         await res.json()
         setValues({ name: '', email: '', subject: '', message: '' })
         setFormSubmit(true)
+        confetti()
       } catch (error) {
         console.error(error)
       } finally {

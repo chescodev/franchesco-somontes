@@ -1,43 +1,110 @@
 ---
-import GitHubIcon from '../icons/GitHubIcon.astro'
-import LikedInIcon from '../icons/LikedInIcon.astro'
-import WhatsAppIcon from '../icons/WhatsAppIcon.astro'
-import GmailIcon from '../icons/GmailIcon.astro'
-
-const WhatsAppMessage =
-  'https://api.whatsapp.com/send?phone=+51936899419&text=Hola,%20quisera%20saber%20si....'
-const LinkLinkedin = 'https://www.linkedin.com/in/franchescosomontes/'
-const LinkGitHub = 'https://github.com/chescodev'
+const navItems = [
+  {
+    title: 'Inicio',
+    label: 'home',
+    url: '/#top',
+  },
+  {
+    title: 'Experiencia',
+    label: 'experience',
+    url: '/#experience',
+  },
+  {
+    title: 'Proyectos',
+    label: 'projects',
+    url: '/#projects',
+  },
+  {
+    title: 'Skills',
+    label: 'skills',
+    url: '/#skills',
+  },
+  // {
+  //   title: 'Sobre mí',
+  //   label: 'sobre-mi',
+  //   url: '/#about-me',
+  // },
+  // {
+  //   title: 'Contacto',
+  //   label: 'contact',
+  //   url: '/#contact',
+  // },
+]
 ---
 
 <header
-  class="flex justify-between items-center px-4 py-5 w-full xl:w-[1120px] mx-auto"
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
-  <nav class="flex flex-row gap-x-4 lg:gap-x-6 opacity-90 text-base lg:text-lg">
-    <a class="hover:text-yellow-500" href="#top">Inicio</a>
-    <a class="hover:text-yellow-500" href="#experience">Experiencia</a>
-    <a class="hover:text-yellow-500" href="#projects">Proyectos</a>
-    <!-- <a class="hover:text-yellow-500" href="#skills">Skills</a> -->
-    <!-- <a class="hover:text-yellow-500" href="#about-me">Sobre mí</a> -->
-    <a class="hover:text-yellow-500" href="#contact">Contacto</a>
+  <nav
+    class="flex px-3 text-sm font-medium rounded-full text-gray-200 justify-center items-center"
+  >
+    {
+      navItems.map(link => (
+        <a
+          class="relative block p-2 transition hover:text-yellow-400"
+          aria-label={link.label}
+          href={link.url}
+        >
+          {link.title}
+        </a>
+      ))
+    }
   </nav>
-  <div class="flex flex-row gap-x-4">
-    <a class="hover:text-yellow-400" href={LinkGitHub}
-      ><GitHubIcon class="size-6 lg:size-[30px]" />
-      <a class="hover:text-yellow-400" href={LinkLinkedin}
-        ><LikedInIcon class="size-6 lg:size-[30px]" /></a
-      >
-      <a class="hover:text-yellow-400" href={WhatsAppMessage}
-        ><WhatsAppIcon class="size-6 lg:size-[30px]" /></a
-      >
-    </a>
-  </div>
-
-  <!-- 
-    TODO: 
-        - Hover a icons 
-        - Find color for secondary color
-        - Add mobile view with 3 rayas
-
--->
 </header>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const sections = document.querySelectorAll('section')
+    const navItems = document.querySelectorAll('header nav a')
+
+    const callback = (entries: any[]) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navItems.forEach(item => {
+            if (item.getAttribute('aria-label') == entry.target.id) {
+              item.classList.add('text-yellow-500')
+            } else {
+              item.classList.remove('text-yellow-500')
+            }
+          })
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.3,
+    })
+
+    sections.forEach(section => {
+      observer.observe(section)
+    })
+
+    // Cleanup function
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === 'hidden') {
+        observer.disconnect()
+      } else {
+        sections.forEach(section => {
+          observer.observe(section)
+        })
+      }
+    }
+  })
+</script>
+
+<style>
+  nav {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  @keyframes nav-shadown {
+    to {
+      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
+    }
+  }
+</style>

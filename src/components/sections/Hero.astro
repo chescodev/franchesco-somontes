@@ -3,12 +3,20 @@ import Badge from '../Badge.astro'
 import HeroPill from '../HeroPill.astro'
 import MailIcon from '../icons/MailIcon.astro'
 import DonwloadIcon from '../icons/DownloadIcon.astro'
+import GitHubIcon from '../icons/GitHubIcon.astro'
+import LikedInIcon from '../icons/LikedInIcon.astro'
+import WhatsAppIcon from '../icons/WhatsAppIcon.astro'
+
+const WhatsAppMessage =
+  'https://api.whatsapp.com/send?phone=+51936899419&text=Hola,%20quisera%20saber%20si....'
+const LinkLinkedin = 'https://www.linkedin.com/in/franchescosomontes/'
+const LinkGitHub = 'https://github.com/chescodev'
 ---
 
 <h1
   class="text-white text-2xl lg:text-5xl font-bold flex flex-col gap-y-2 md:flex-row md:gap-x-4 pb-6 lg:pb-10"
 >
-  Hola, soy Franchesco 
+  Hola, soy Franchesco
   <a
     href="https://www.linkedin.com/in/franchescosomontes/"
     target="_blank"
@@ -25,15 +33,28 @@ import DonwloadIcon from '../icons/DownloadIcon.astro'
 </h2>
 
 <nav class="flex flex-wrap gap-4 mt-8">
-  <HeroPill href="">
+  <HeroPill href="#contact" target="">
     <MailIcon class="size-4" />
     Contáctame
   </HeroPill>
-  <HeroPill href="">
+  <HeroPill href="/FranchescoSomontesCV.pdf">
     <DonwloadIcon class="size-4" />
     Descargar CV
   </HeroPill>
+
+  <div class="flex flex-row gap-x-4">
+    <a class="hover:text-yellow-400" href={LinkGitHub}
+      ><GitHubIcon class="size-6 lg:size-[30px]" />
+      <a class="hover:text-yellow-400" href={LinkLinkedin}
+        ><LikedInIcon class="size-6 lg:size-[30px]" /></a
+      >
+      <a class="hover:text-yellow-400" href={WhatsAppMessage}
+        ><WhatsAppIcon class="size-6 lg:size-[30px]" /></a
+      >
+    </a>
+  </div>
 </nav>
+
 <!-- TODO: 
   - Update styles of h2
 -->

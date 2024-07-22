@@ -1,104 +1,22 @@
 ---
-import AstroIcon from '@/components/icons/AstroIcon.astro'
-import CSharpIcon from '@/components/icons/CSharpIcon.astro'
-import CssIcon from '@/components/icons/CssIcon.astro'
-import HtmlIcon from '@/components/icons/HtmlIcon.astro'
-import JavaIcon from '@/components/icons/JavaIcon.astro'
-import JavaScriptIcon from '@/components/icons/JavaScriptIcon.astro'
-import KotlinIcon from '@/components/icons/KotlinIcon.astro'
-import MongoDbIcon from '@/components/icons/MongoDbIcon.astro'
-import MySqlIcon from '@/components/icons/MySqlIcon.astro'
-import PhpIcon from '@/components/icons/PhpIcon.astro'
-import ReactIcon from '@/components/icons/ReactIcon.astro'
-import SpringIcon from '@/components/icons/SpringIcon.astro'
-import SqlLiteIcon from '@/components/icons/SqlLiteIcon.astro'
-import SqlServerIcon from '@/components/icons/SqlServerIcon.astro'
-import SwiftIcon from '@/components/icons/SwiftIcon.astro'
-import TailwindIcon from '@/components/icons/TailwindIcon.astro'
-import TursoIcon from '@/components/icons/TursoIcon.astro'
-import TypeScriptIcon from '@/components/icons/TypeScriptIcon.astro'
-
+import { skillIcons } from '@/components/utils/Icons'
+import CSharpIcon from '../icons/CSharpIcon.astro'
 ---
 
-<div class="flex flex-wrap gap-x-2">
+<div class="flex flex-wrap gap-4 justify-center p-6">
   {
-    [
-      HtmlIcon,
-      CssIcon,
-      JavaScriptIcon,
-      TypeScriptIcon,
-      ReactIcon,
-      AstroIcon,
-      TailwindIcon,
-      JavaIcon,
-      SpringIcon,
-      CSharpIcon,
-      PhpIcon,
-      KotlinIcon,
-      SwiftIcon,
-      MySqlIcon,
-      SqlServerIcon,
-      MongoDbIcon,
-      SqlLiteIcon,
-      TursoIcon,
-
-
-    ].map(Icon => (
-      <div class="icon-box my-2 py-4">
-        <Icon class="size-12" />
-      </div>
+    skillIcons.map((skill) => (
+      <article
+        class={`size-12 md:size-16 rounded-2xl p-2 relative overflow-hidden flex items-center justify-center duration-300`}
+        title={skill.title}
+      >
+        <skill.image
+          alt={skill.alt}
+          class="size-10 z-5 rounded object-contain"
+        />
+        <div class={`absolute inset-0 rounded-2xl blur-md ${skill.bg}`} />
+      </article>
     ))
   }
-  <!-- PROBAR OTRAS OPCIONES PARA LAS SKILLS, SIENTO QUE NO VA CON EL FONDO 
-    QUIZÁS PROBAR ALGO COMO ESTO https://hlinarez.netlify.app/ 
-    TODO: 
-    - DESCARGAR MÀS ICONOS
-    *** LISTA DE ICONOS 
-      - HTML ✔️
-      - CSS ✔️, TAILWIND ✔️
-      - JAVASCRIPT ✔️, TYPESCRIPT ✔️
-      - JAVA ✔️, SPRING ✔️
-      - C# ✔️, .NET
-      - PHP ✔️, CAKEPHP
-      - KOTLIN ✔️, SWIFT ✔️
-      - REACT ✔️, ANGULAR, EXPRESS, ASTRO ✔️
-      - MYSQL ✔️, SQL SERVER ✔️, MONGODB ✔️, SQLITE ✔️, TURSO ✔️
-      - DOCKER, ORACLE VM VIRTUALBOX,
-      - REST API
-      - GIT, GITHUB
-      -INGLÉS
-
-    - VER SI SE PUEDE PONER ALT
-
-  -->
 </div>
 
-<style>
-  .icon-box {
-    position: relative;
-    /* background: linear-gradient(
-      to bottom right,
-      hsl(0, 0%, 25%) 0%,
-      hsla(0, 0%, 25%, 0) 50%
-    ); */
-    width: 70px;
-    height: 70px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    color: hsl(45, 100%, 72%);
-    box-shadow: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
-    z-index: 1;
-  }
-
-  .icon-box::before {
-    content: '';
-    position: absolute;
-    inset: 1px;
-    /* background: hsl(240, 2%, 13%); */
-    border-radius: inherit;
-    z-index: -1;
-  }
-</style>

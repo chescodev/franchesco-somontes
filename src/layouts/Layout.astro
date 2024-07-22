@@ -1,6 +1,7 @@
 ---
 import '@fontsource-variable/onest'
 import Header from '../components/sections/Header.astro'
+import Header2 from '../components/sections/Header2.astro'
 import Background from '../components/sections/Background.astro'
 import Footer from '../components/sections/Footer.astro'
 import { ViewTransitions } from 'astro:transitions'
@@ -25,11 +26,13 @@ const { description, title } = Astro.props
     <ViewTransitions />
   </head>
   <body class="relative">
-    <Background />
+    <Background class="absolute"/>
     <Header />
+    <!-- <Header2 /> -->
     <slot />
     <Footer />
-  </body><style is:global>
+  </body>
+  <style is:global>
     :root {
       color: aliceblue;
     }
@@ -45,7 +48,9 @@ const { description, title } = Astro.props
       flex-direction: column;
 
       min-height: 100vh;
-      overscroll-behavior: none;
+      /* overscroll-behavior: none; */
+      margin: 0;
+      padding: 0;
     }
 
     @media (prefers-reduced-motion: reduce) {

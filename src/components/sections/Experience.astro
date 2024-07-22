@@ -1,13 +1,14 @@
 ---
 import ExperienceItem from '../ExperienceItem.astro'
 
-const EXPERIENCE = [ 
+const EXPERIENCE = [
   {
     date: 'Mayo 2024 - Actualidad',
     title: 'Desarrollador React Jr',
-    company: 'Devdatep',
+    company: 'Devdatep Consulting',
     description:
-      'Desarrollo paginas web.',
+      `Implementé diseños de Figma, integrando y manipulando endpoints para mostrar, filtrar y actualizar información en la base de datos.
+      Mejoré y optimicé proyectos existentes, actualizando el código e implementando herramientas de calidad.`,
     link: '',
   },
   {
@@ -15,7 +16,9 @@ const EXPERIENCE = [
     title: 'Practicante de TI',
     company: 'Ksoft - Senati Huánuco',
     description:
-      'Desarrollé aplicaciones web utilizando tecnologías modernas. Proporcioné soporte técnico a clientes, resolviendo problemas y asegurando un funcionamiento óptimo de sus sistemas.',
+      `Desarrollé aplicaciones web personalizadas para satisfacer las peticiones de los clientes, mejorando su funcionalidad y usabilidad. 
+      Facilité soporte técnico a los sistemas de nuestros clientes, asegurando una experiencia de usuario fluida y eficiente.`,
+    link: ''
   },
 ]
 ---
@@ -26,7 +29,6 @@ const EXPERIENCE = [
       <li class="">
         <ExperienceItem {...experience} />
       </li>
-    )) 
+    ))
   }
 </ol>
-
